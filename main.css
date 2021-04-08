@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar {
+    position: fixed;
+    width: 270px;
+    left: -270px;
+    height: 100%;
+    background-color: #151719;
+    transition: all 500ms linear;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#sidebar ul li {
+    color: rgba(230, 230, 230, .9);
+    text-align: center;
+    margin: 2px;
+    list-style: none;
+    border-bottom: 1px solid rgba(100, 100, 100, .3);
+}
+
+#sidebar .toogle-btn {
+    position: absolute;
+    left: 290px;
+    top: 20px;
+    cursor: pointer;
+}
+
+#sidebar .toogle-btn span {
+    display: block;
+    text-align: center;
+    width: 40px;
+    font-size: 30px;
+    border: 1px solid #000;
+}
+
+h3 {
+    color: white;
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-principal,
+.container-container {
+    text-align: center;
+    width: 300px;
+    border: 2px solid #494848;
+    height: 100%;
+}
+
+.container-principal {
+    border: none;
+}
+
+.container-year {
+    padding: 3px;
+    border: 2px solid #494848;
+    margin: 1px 1px;
+}
+
+.container-container-materias {
+    max-height: 0;
+    opacity: 0;
+    transition: all 100ms;
+}
+
+.toogle-matery {
+    color: #f5f6fa;
+    cursor: pointer;
+    position: relative;
+    order: 0;
+}
+
+.toogle-matery::after {
+    content: "";
+    background: url("img/arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 4px;
+    top: 5px;
+    transition: all 80ms;
+}
+
+.container-container-materias.active {
+    max-height: 100%;
+    opacity: 1;
+}
+
+.container-year .container-container-materias .container-container a,
+.container-year .container-container-materias .container-container {
+    text-decoration: none;
+    color: rgba(230, 230, 230, .9);
+    cursor: pointer;
+}
